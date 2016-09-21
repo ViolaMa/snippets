@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>弹出框模块</title>
+    <link href="../css/main.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container">
+    <a href="javascript:;" id="popup" data-href="inner.html">点击</a>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+<!--完成此弹框还需解决：opacity的逐渐改变、获取目标文件某指定id 的内容、-->
+<div id="popupDiv" class="popup">
+    <div id="popupContainer" class="popup-container">
+        <div class="popup-top">
+            <p id="popupTitle"></p>
+            <button type="button" onclick="close()" class="fr btn close">X</button>
+        </div>
+        <div id="popupContent" class="popup-content"></div>
+    </div>
+    <div id="mask" class="mask"></div>
+</div>
+<script>
+    window.onload = function () {
+        var aPopup = document.getElementById("popup");
+        var popupDiv = document.getElementById("popupDiv");
+        var popupContainer = document.getElementById("popupContainer");
+
+        aPopup.addEventListener("click", function () {
+            var href = this.getAttribute("data-href");
+            openCommonPopup(href, "点击显示", 500);
+        }, false);
+
+        function openCommonPopup(url, title, width) {
+            var screen = {
+                x: document.documentElement.clientWidth,
+                y: document.documentElement.clientHeight
+            }
+            var popupTitle = document.getElementById("popupTitle");
+            var popupContent = document.getElementById("popupContent");
+
+            var mask = document.getElementById("mask");
+            popupDiv.style.display = "block";
+            if (!width) popupContainer.style.width = 600 + "px";
+            else {
+                popupContainer.style.width = width + "px";
+            }
+            var left = (screen.x - popupContainer.offsetWidth) / 2;
+            var top = (screen.y - popupContainer.offsetHeight) / 2;
+            if (top < 50) top = 50;
+            popupContainer.style.left = left + "px";
+            popupContainer.style.top = top + "px";
+            popupContent.innerHTML = url;
+            popupTitle.innerHTML = title;
+
+            mask.addEventListener("click", function () {
+                popupDiv.style.display = "none";
+            })
+        }
+
+        function close() {
+            popupDiv.style.display = "none";
+        }
+
+        function opacityFn() {
+        }
+
+//        var xhr = new window.XMLHttpRequest();
+//        xhr.open("get",url,true);
+//        xhr.send();
+//        xhr.onreadyStatechange = function(){
+//            if(xhr.readyState ===4 ){
+//                if(xhr.status === 200){
+//
+//                }
+//            }
+//        }
+    }
+
+</script>
+</body>
+
+</html>
