@@ -19,55 +19,25 @@
     <div id="popupContainer" class="popup-container">
         <div class="popup-top">
             <p id="popupTitle"></p>
-            <button type="button" onclick="close()" class="fr btn close">X</button>
+            <button type="button" onclick="close()" class="fr btn close"><span class=""></span></button>
         </div>
         <div id="popupContent" class="popup-content"></div>
     </div>
     <div id="mask" class="mask"></div>
 </div>
+<script src="../script/jquery-1.11.3.js"></script>
 <script>
     window.onload = function () {
         var aPopup = document.getElementById("popup");
-        var popupDiv = document.getElementById("popupDiv");
         var popupContainer = document.getElementById("popupContainer");
 
         aPopup.addEventListener("click", function () {
-            var href = this.getAttribute("data-href");
-            openCommonPopup(href, "点击显示", 500);
+            openLink(this,"inner");
         }, false);
-
-        function openCommonPopup(url, title, width) {
-            var screen = {
-                x: document.documentElement.clientWidth,
-                y: document.documentElement.clientHeight
-            }
-            var popupTitle = document.getElementById("popupTitle");
-            var popupContent = document.getElementById("popupContent");
-
-            var mask = document.getElementById("mask");
-            popupDiv.style.display = "block";
-            if (!width) popupContainer.style.width = 600 + "px";
-            else {
-                popupContainer.style.width = width + "px";
-            }
-            var left = (screen.x - popupContainer.offsetWidth) / 2;
-            var top = (screen.y - popupContainer.offsetHeight) / 2;
-            if (top < 50) top = 50;
-            popupContainer.style.left = left + "px";
-            popupContainer.style.top = top + "px";
-            popupContent.innerHTML = url;
-            popupTitle.innerHTML = title;
-
-            mask.addEventListener("click", function () {
-                popupDiv.style.display = "none";
-            })
-        }
-
-        function close() {
-            popupDiv.style.display = "none";
-        }
-
-        function opacityFn() {
+        function openLink(obj,id) {
+            var href = obj.getAttribute("data-href") + " div[id=" + id + "]";
+            openCommonPopup(href, "点击显示", 500);
+            console.log(href);
         }
 
 //        var xhr = new window.XMLHttpRequest();
@@ -80,8 +50,43 @@
 //                }
 //            }
 //        }
+
+    };
+
+    var popupDiv = document.getElementById("popupDiv");
+    var popupTitle = document.getElementById("popupTitle");
+    var popupContent = document.getElementById("popupContent");
+    var mask = document.getElementById("mask");
+    function openCommonPopup(url, title, width) {
+        var screen = {
+            x: document.documentElement.clientWidth,
+            y: document.documentElement.clientHeight
+        }
+        $("#popupDiv").fadeIn(100);
+        if (!width) popupContainer.style.width = 600 + "px";
+        else {
+            popupContainer.style.width = width + "px";
+        }
+        var left = (screen.x - popupContainer.offsetWidth) / 2;
+        var top = (screen.y - popupContainer.offsetHeight) / 2;
+        if (top < 50) top = 50;
+        popupContainer.style.left = left + "px";
+        popupContainer.style.top = top + "px";
+        /*popupContent.innerHTML = url;*/
+        popupTitle.innerHTML = title;
+        $("#popupContent").load(url);
+        mask.addEventListener("click", function () {
+            closeCommonPopup();
+        })
+    };
+
+    function closeCommonPopup() {
+        $("#popupDiv").fadeOut(100);
     }
 
+    var timer = null, speed = 10;
+    timer = setInterval(function () {
+    }, 30)
 </script>
 </body>
 

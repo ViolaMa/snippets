@@ -262,6 +262,7 @@ BDO[DIR="rtl"] {
 }
 .btn{
     border:none;
+    cursor:pointer;
 }
 .close{
     position: absolute;
