@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>51job搜索/乐聘云简历</title>
+    <link rel="stylesheet" href="css/search.css"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+<div class="wy">
+    <header>
+        <div class="wy-header">
+            <div class="wy-warp info-warp">
+                <div class="wy-info wy-width">
+                    <ul>
+                        <li><a href="">用户名<!--跳转到个人中心--></a></li>
+                        <li><a href="">消息<!--通知列表弹窗--></a></li>
+                        <li><a href="">账号设置<!--跳转到个人中心--></a></li>
+                        <li><a href="" class="wy-distinct">退出</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wy-nav wy-warp">
+                <div class="wy-width">
+                    <div class="wy-logo fl">
+                        <a href=""><img src="images/51job-logo.png" alt=""></a>
+                        <a href=""><img src="images/wcai-logo.png" alt=""></a>
+                    </div>
+                    <nav>
+                        <div class="wy-menu fr">
+                            <ul>
+                                <li><a href="">首页<!--打开新页面-乐聘云简历/dashboard页--></a></li>
+                                <li><a href="">简历库<!--打开新页面云简历/本地简历--></a></li>
+                                <li><a href="">云简历<!--打开新页面/云简历--></a></li>
+                                <li><a href="" class="wy-current">简历搜索</a></li>
+                                <li><a href="">职位发布<!--打开新页面-项目库--></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="clearfloat"></div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="wy-main">
+            <div class="wy-width">
+                <div class="wy-crumbs fl">
+                    <ol>
+                        <li>我的位置:</li>
+                        <li>搜索简历</li>
+                    </ol>
+                </div>
+                <div class="fr wy-download">
+                    <a href="">查看已下载简历<!--乐聘云简历/下载记录--></a>
+                </div>
+                <div class="clearfloat"></div>
+                <div class="wy-container">
+                    <form action="">
+                        <div class="search-warp">
+                            <div class="search-row">
+                                <div class="search-name">关键字/ID</div>
+                                <div class="search-form"><input type="text" class="wy-form-control" data-role="none"
+                                                                placeholder="可输入简历ID、职位名、学校名、证书、IT技能、语言等"
+                                />
+                                </div>
+                                <div class="search-add"><label><input
+                                        type="checkbox" data-role="none"/>含任一关键字</label></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">居&nbsp;住&nbsp;地</div>
+                                <div class="search-form"><input type="text" id="wyResidenceSelect"
+                                                                class="wy-form-control" data-role="none"
+                                                                placeholder="请输入/选择"/>
+                                    <div class="search-con-selected hide"></div>
+                                    <a href="" id="wyResidence" class="to-select" data-role="selector"><i
+                                            class="icon-more"></i></a>
+                                    <div id="wyResidenceDiv" class="hide select-div">
+                                        <div><span>选择居住地（最多选3项）</span></div>
+                                        <div id="wyResidenceSelected" class="wy-selected"><span>已选工作地</span></div>
+                                        <h3>热门城市</h3>
+                                        <div class="wy-condition-list">
+                                            <ul class="wy-condition-list-ul">
+                                                <li><a href="">北京</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">北京</a></dt>
+                                                            <dd><a href="">东城区</a></dd>
+                                                            <dd><a href="">西城区</a></dd>
+                                                            <dd><a href="">崇文区</a></dd>
+                                                            <dd><a href="">宣武区</a></dd>
+                                                            <dd><a href="">朝阳区</a></dd>
+                                                            <dd><a href="">丰台区</a></dd>
+                                                            <dd><a href="">石景区</a></dd>
+                                                            <dd><a href="">海淀区</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">上海</a></li>
+                                                <li><a href="">广州</a></li>
+                                                <li><a href="">深圳</a></li>
+                                                <li><a href="">天津</a></li>
+                                                <li><a href="">重庆</a></li>
+                                                <li><a href="">南京</a></li>
+                                                <li><a href="">武汉</a></li>
+                                                <li><a href="">西安</a></li>
+                                                <li><a href="">杭州</a></li>
+                                                <li><a href="">成都</a></li>
+                                                <li><a href="">苏州</a></li>
+                                                <li><a href="">宁波</a></li>
+                                                <li><a href="">青岛</a></li>
+                                                <li><a href="">沈阳</a></li>
+                                                <li><a href="">大连</a></li>
+                                                <li><a href="">东莞</a></li>
+                                                <li><a href="">福州</a></li>
+                                                <li><a href="">济南</a></li>
+                                                <li><a href="">合肥</a></li>
+                                                <li><a href="">郑州</a></li>
+                                                <li><a href="">长沙</a></li>
+                                                <li><a href="">哈尔滨</a></li>
+                                                <li><a href="">长春</a></li>
+                                                <li><a href="">昆明</a></li>
+                                                <li><a href="">无锡</a></li>
+                                                <li><a href="">常州</a></li>
+                                                <li><a href="">珠海</a></li>
+                                                <li><a href="">佛山</a></li>
+                                                <li><a href="">南昌</a></li>
+                                            </ul>
+                                        </div>
+                                        <h3>所有省份</h3>
+                                        <div class="wy-condition-list">
+                                            <ul class="wy-condition-list-ul">
+                                                <li><a href="">广东省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">广东省</a></dt>
+                                                            <dd><a href="">广州</a></dd>
+                                                            <dd><a href="">深圳</a></dd>
+                                                            <dd><a href="">惠州</a></dd>
+                                                            <dd><a href="">汕头</a></dd>
+                                                            <dd><a href="">珠海</a></dd>
+                                                            <dd><a href="">佛山</a></dd>
+                                                            <dd><a href="">中山</a></dd>
+                                                            <dd><a href="">东莞</a></dd>
+                                                            <dd><a href="">韶关</a></dd>
+                                                            <dd><a href="">江门</a></dd>
+                                                            <dd><a href="">湛江</a></dd>
+                                                            <dd><a href="">肇庆</a></dd>
+                                                            <dd><a href="">清远</a></dd>
+                                                            <dd><a href="">潮州</a></dd>
+                                                            <dd><a href="">河源</a></dd>
+                                                            <dd><a href="">揭阳</a></dd>
+                                                            <dd><a href="">茂名</a></dd>
+                                                            <dd><a href="">汕尾</a></dd>
+                                                            <dd><a href="">梅州</a></dd>
+                                                            <dd><a href="">开平</a></dd>
+                                                            <dd><a href="">阳江</a></dd>
+                                                            <dd><a href="">云浮</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">江苏省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">江苏省</a></dt>
+                                                            <dd><a href="">南京</a></dd>
+                                                            <dd><a href="">苏州</a></dd>
+                                                            <dd><a href="">无锡</a></dd>
+                                                            <dd><a href="">常州</a></dd>
+                                                            <dd><a href="">昆山</a></dd>
+                                                            <dd><a href="">常熟</a></dd>
+                                                            <dd><a href="">扬州</a></dd>
+                                                            <dd><a href="">南通</a></dd>
+                                                            <dd><a href="">镇江</a></dd>
+                                                            <dd><a href="">徐州</a></dd>
+                                                            <dd><a href="">连云港</a></dd>
+                                                            <dd><a href="">盐城</a></dd>
+                                                            <dd><a href="">张家港</a></dd>
+                                                            <dd><a href="">太仓</a></dd>
+                                                            <dd><a href="">泰州</a></dd>
+                                                            <dd><a href="">淮安</a></dd>
+                                                            <dd><a href="">宿迁</a></dd>
+                                                            <dd><a href="">丹阳</a></dd>
+                                                            <dd><a href="">泰兴</a></dd>
+                                                            <dd><a href="">靖江</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">浙江省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">浙江省</a></dt>
+                                                            <dd><a href="">杭州</a></dd>
+                                                            <dd><a href="">宁波</a></dd>
+                                                            <dd><a href="">温州</a></dd>
+                                                            <dd><a href="">绍兴</a></dd>
+                                                            <dd><a href="">金华</a></dd>
+                                                            <dd><a href="">嘉兴</a></dd>
+                                                            <dd><a href="">台州</a></dd>
+                                                            <dd><a href="">湖州</a></dd>
+                                                            <dd><a href="">丽水</a></dd>
+                                                            <dd><a href="">舟山</a></dd>
+                                                            <dd><a href="">衢州</a></dd>
+                                                            <dd><a href="">义乌</a></dd>
+                                                            <dd><a href="">海宁</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">四川省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">四川省</a></dt>
+                                                            <dd><a href="">成都</a></dd>
+                                                            <dd><a href="">绵阳</a></dd>
+                                                            <dd><a href="">乐山</a></dd>
+                                                            <dd><a href="">泸州</a></dd>
+                                                            <dd><a href="">德阳</a></dd>
+                                                            <dd><a href="">宜宾</a></dd>
+                                                            <dd><a href="">自贡</a></dd>
+                                                            <dd><a href="">内江</a></dd>
+                                                            <dd><a href="">内江</a></dd>
+                                                            <dd><a href="">攀枝花</a></dd>
+                                                            <dd><a href="">南充</a></dd>
+                                                            <dd><a href="">眉山</a></dd>
+                                                            <dd><a href="">广安</a></dd>
+                                                            <dd><a href="">资阳</a></dd>
+                                                            <dd><a href="">遂宁</a></dd>
+                                                            <dd><a href="">广元</a></dd>
+                                                            <dd><a href="">达州</a></dd>
+                                                            <dd><a href="">雅安</a></dd>
+                                                            <dd><a href="">西昌</a></dd>
+                                                            <dd><a href="">巴中</a></dd>
+                                                            <dd><a href="">甘孜</a></dd>
+                                                            <dd><a href="">阿坝</a></dd>
+                                                            <dd><a href="">凉山</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">海南省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">海南省</a></dt>
+                                                            <dd><a href="">海口</a></dd>
+                                                            <dd><a href="">三亚</a></dd>
+                                                            <dd><a href="">洋浦经济开发区</a></dd>
+                                                            <dd><a href="">文昌</a></dd>
+                                                            <dd><a href="">琼海</a></dd>
+                                                            <dd><a href="">万宁</a></dd>
+                                                            <dd><a href="">儋州</a></dd>
+                                                            <dd><a href="">东方</a></dd>
+                                                            <dd><a href="">五指山</a></dd>
+                                                            <dd><a href="">定安</a></dd>
+                                                            <dd><a href="">屯昌</a></dd>
+                                                            <dd><a href="">澄迈</a></dd>
+                                                            <dd><a href="">临高</a></dd>
+                                                            <dd><a href="">三沙</a></dd>
+                                                            <dd><a href="">琼中</a></dd>
+                                                            <dd><a href="">保亭</a></dd>
+                                                            <dd><a href="">白沙</a></dd>
+                                                            <dd><a href="">昌江</a></dd>
+                                                            <dd><a href="">乐东</a></dd>
+                                                            <dd><a href="">陵水</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">福建省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">福建省</a></dt>
+                                                            <dd><a href="">福州</a></dd>
+                                                            <dd><a href="">厦门</a></dd>
+                                                            <dd><a href="">泉州</a></dd>
+                                                            <dd><a href="">漳州</a></dd>
+                                                            <dd><a href="">莆田</a></dd>
+                                                            <dd><a href="">三明</a></dd>
+                                                            <dd><a href="">南平</a></dd>
+                                                            <dd><a href="">宁德</a></dd>
+                                                            <dd><a href="">龙岩</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">山东省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">山东省</a></dt>
+                                                            <dd><a href="">济南</a></dd>
+                                                            <dd><a href="">青岛</a></dd>
+                                                            <dd><a href="">烟台</a></dd>
+                                                            <dd><a href="">潍坊</a></dd>
+                                                            <dd><a href="">威海</a></dd>
+                                                            <dd><a href="">淄博</a></dd>
+                                                            <dd><a href="">临沂</a></dd>
+                                                            <dd><a href="">淄博</a></dd>
+                                                            <dd><a href="">济宁</a></dd>
+                                                            <dd><a href="">东营</a></dd>
+                                                            <dd><a href="">泰安</a></dd>
+                                                            <dd><a href="">日照</a></dd>
+                                                            <dd><a href="">德州</a></dd>
+                                                            <dd><a href="">菏泽</a></dd>
+                                                            <dd><a href="">滨州</a></dd>
+                                                            <dd><a href="">枣庄</a></dd>
+                                                            <dd><a href="">聊城</a></dd>
+                                                            <dd><a href="">莱芜</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">江西省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">江西省</a></dt>
+                                                            <dd><a href="">南昌</a></dd>
+                                                            <dd><a href="">九江</a></dd>
+                                                            <dd><a href="">景德镇</a></dd>
+                                                            <dd><a href="">萍乡</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">广西省</a></li>
+                                                <li><a href="">安徽省</a></li>
+                                                <li><a href="">河北省</a></li>
+                                                <li><a href="">河南省</a></li>
+                                                <li><a href="">湖北省</a></li>
+                                                <li><a href="">湖南省</a></li>
+                                                <li><a href="">陕西省</a></li>
+                                                <li><a href="">山西省</a></li>
+                                                <li><a href="">黑龙江省</a></li>
+                                                <li><a href="">辽宁省</a></li>
+                                                <li><a href="">吉林省</a></li>
+                                                <li><a href="">云南省</a></li>
+                                                <li><a href="">贵州省</a></li>
+                                                <li><a href="">甘肃省</a></li>
+                                                <li><a href="">内蒙古</a></li>
+                                                <li><a href="">宁夏</a></li>
+                                                <li><a href="">西藏</a></li>
+                                                <li><a href="">新疆</a></li>
+                                                <li><a href="">青海省</a></li>
+                                                <li><a href="">香港</a></li>
+                                                <li><a href="">澳门</a></li>
+                                                <li><a href="">台湾</a></li>
+                                                <li><a href="">国外</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-add"><label><input
+                                        type="checkbox" data-role="none"/>含期望工作地</label></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能</div>
+                                <div class="search-form"><input type="text" id="wyFunctionInput" class="wy-form-control"
+                                                                data-role="none" placeholder="请输入/选择"
+                                />
+                                    <div class="search-con-selected hide"></div>
+                                    <a href="" id="wyFunction" class="to-select" data-role="selector"><i
+                                            class="icon-more"></i></a>
+                                    <div id="wyFunctionDiv" class="hide select-div">
+                                        <div><span>选择职能（最多选3项）</span></div>
+                                        <div id="wyFunctionSelected" class="wy-selected"><span>已选职能</span></div>
+                                        <div class="wy-condition-list">
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>计算机/互联网/通信/电子</h3>
+                                                </div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">计算机硬件</a>
+                                                            <div class="condition-sub-list">
+                                                                <dl>
+                                                                    <dt><a href="">计算机硬件</a></dt>
+                                                                    <dd><a href="">高级硬件工程师</a></dd>
+                                                                    <dd><a href="">硬件工程师</a></dd>
+                                                                    <dd><a href="">其他</a></dd>
+                                                                </dl>
+                                                            </div>
+                                                        </li>
+                                                        <li><a href="">网店淘宝</a></li>
+                                                        <li><a href="">通信技术开发及应用</a></li>
+                                                        <li><a href="">计算机软件</a>
+                                                            <div class="condition-sub-list">
+                                                                <dl>
+                                                                    <dt><a href="">计算机软件</a></dt>
+                                                                    <dd><a href="">高级软件工程师</a></dd>
+                                                                    <dd><a href="">软件工程师</a></dd>
+                                                                    <dd><a href="">软件UI设计师/工程师</a></dd>
+                                                                    <dd><a href="">算法工程师</a></dd>
+                                                                </dl>
+                                                            </div>
+                                                        </li>
+                                                        <li><a href="">IT-管理</a></li>
+                                                        <li><a href="">电子/电器/半导体/仪器仪表</a></li>
+                                                        <li><a href="">互联网/电子商务/网游</a></li>
+                                                        <li><a href="">IT-品管、技术支持及其它</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>销售/客服/技术支持</h3>
+                                                </div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">销售管理</a></li>
+                                                        <li><a href="">客服及支持</a></li>
+                                                        <li><a href="">销售人员</a></li>
+                                                        <li><a href="">销售行政及商务</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>会计/金融/银行/保险</h3>
+                                                </div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">财务/审计/税务</a></li>
+                                                        <li><a href="">保险</a></li>
+                                                        <li><a href="">金融/证券/期货/投资</a></li>
+                                                        <li><a href="">银行</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>生产/营运/采购/物流</h3>
+                                                </div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">生产/营运</a></li>
+                                                        <li><a href="">汽车制造</a></li>
+                                                        <li><a href="">服装/纺织/皮革</a></li>
+                                                        <li><a href="">贸易</a></li>
+                                                        <li><a href="">质量安全</a></li>
+                                                        <li><a href="">技工普工</a></li>
+                                                        <li><a href="">印刷包装</a></li>
+                                                        <li><a href="">物流/仓储</a></li>
+                                                        <li><a href="">工程/机械/能源</a></li>
+                                                        <li><a href="">机械机床</a></li>
+                                                        <li><a href="">采购</a></li>
+                                                        <li><a href="">汽车销售与服务</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>生物/制药/医疗/护理</h3>
+                                                </div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">生物/制药/医疗器械</a></li>
+                                                        <li><a href="">化工</a></li>
+                                                        <li><a href="">医院/医疗/护理</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>广告/市场/媒体/艺术</h3>
+                                                </div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">广告</a></li>
+                                                        <li><a href="">影视/媒体</a></li>
+                                                        <li><a href="">公关/媒介</a></li>
+                                                        <li><a href="">编辑出版</a></li>
+                                                        <li><a href="">市场/营销</a></li>
+                                                        <li><a href="">艺术/设计</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>建筑/房地产</h3></div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">建筑工程与装潢</a></li>
+                                                        <li><a href="">房地产销售与中介</a></li>
+                                                        <li><a href="">房地产开发</a></li>
+                                                        <li><a href="">物业管理</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>人事/行政/高级管理</h3></div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">人力资源</a></li>
+                                                        <li><a href="">高级管理</a></li>
+                                                        <li><a href="">行政/后勤</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>服务业</h3></div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">餐饮服务</a></li>
+                                                        <li><a href="">运动健身</a></li>
+                                                        <li><a href="">交通运输服务</a></li>
+                                                        <li><a href="">酒店旅游</a></li>
+                                                        <li><a href="">休闲娱乐</a></li>
+                                                        <li><a href="">家政保洁</a></li>
+                                                        <li><a href="">美容保健</a></li>
+                                                        <li><a href="">百货零售</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <div class="wy-condition-list-table-fl">
+                                                    <h3>公务员/翻译/其他</h3></div>
+                                                <div class="wy-condition-list-table-fr">
+                                                    <ul>
+                                                        <li><a href="">公务员</a></li>
+                                                        <li><a href="">储备干部/培训生/实习生</a></li>
+                                                        <li><a href="">环保</a></li>
+                                                        <li><a href="">翻译</a></li>
+                                                        <li><a href="">兼职</a></li>
+                                                        <li><a href="">农/林/牧/渔</a></li>
+                                                        <li><a href="">在校学生</a></li>
+                                                        <li><a href="">其他</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-add"><label><input
+                                        type="checkbox" data-role="none"/>只搜最近职能</label></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业</div>
+                                <div class="search-form"><input type="text" class="wy-form-control" id="wyIndustryInput"
+                                                                data-role="none" placeholder="请输入/选择"/>
+                                    <div class="search-con-selected hide"></div>
+                                    <a href="" id="wyIndustry" class="to-select" data-role="selector"><i
+                                            class="icon-more"></i></a>
+                                    <div id="wyIndustryDiv" class="hide select-div">
+                                        <div><span>选择行业（最多选3项）</span></div>
+                                        <div id="wyIndustrySelected" class="wy-selected"><span>已选行业</span></div>
+                                        <div class="wy-condition-list">
+                                            <table width="100%" border="1" cellpadding="0" cellspacing="2">
+                                                <tbody>
+                                                <tr>
+                                                    <th>计算机/互联网/通信/电子</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">计算机软件</a></li>
+                                                            <li><a href="">通信/电信/网络设备</a></li>
+                                                            <li><a href="">网络游戏</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">计算机硬件</a></li>
+                                                            <li><a href="">通信/电信运营、增值服务</a></li>
+                                                            <li><a href="">电子技术/半导体/集成电路</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">计算机服务(系统、数据服务、维修)</a></li>
+                                                            <li><a href="">互联网/电子商务</a></li>
+                                                            <li><a href="">仪器仪表/工业自动化</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>会计/金融/银行/保险</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">会计/审计</a></li>
+                                                            <li><a href="">保险</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">金融/投资/证券</a></li>
+                                                            <li><a href="">信托/担保/拍卖/典当</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">银行</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>贸易/消费/制造/营运</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">贸易/进出口</a></li>
+                                                            <li><a href="">服装/纺织/皮革</a></li>
+                                                            <li><a href="">办公用品及设备</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">批发/零售</a></li>
+                                                            <li><a href="">家具/家电/玩具/礼品</a></li>
+                                                            <li><a href="">机械/设备/重工</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">快速消费品(食品、饮料、化妆品)</a></li>
+                                                            <li><a href="">奢侈品/收藏品/工艺品/珠宝</a></li>
+                                                            <li><a href="">汽车及零配件</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>制药/医疗</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">制药/生物工程</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">医疗/护理/卫生</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">医疗设备/器械</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>广告/媒体</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">广告</a></li>
+                                                            <li><a href="">文字媒体/出版</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">公关/市场推广/会展</a></li>
+                                                            <li><a href="">印刷/包装/造纸</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">影视/媒体/艺术/文化传播</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>房地产/建筑</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">房地产</a></li>
+                                                            <li><a href="">物业管理/商业中心</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">建筑/建材/工程</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">家居/室内设计/装潢</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>专业服务/教育/培训</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">中介服务</a></li>
+                                                            <li><a href="">检测，认证</a></li>
+                                                            <li><a href="">学术/科研</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">专业服务(咨询、人力资源、财会)</a></li>
+                                                            <li><a href="">法律</a></li>
+                                                            <li><a href="">租赁服务</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">外包服务</a></li>
+                                                            <li><a href="">教育/培训/院校</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>服务业</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">餐饮业</a></li>
+                                                            <li><a href="">美容/保健</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">酒店/旅游</a></li>
+                                                            <li><a href="">生活服务</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">娱乐/休闲/体育</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>物流/运输</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">交通/运输/物流</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">航天/航空</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>能源/原材料</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">石油/化工/矿产/地质</a></li>
+                                                            <li><a href="">新能源</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">采掘业/冶炼</a></li>
+                                                            <li><a href="">原材料和加工</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">电气/电力/水利</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>政府/非赢利机构/其他</th>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">政府/公共事业</a></li>
+                                                            <li><a href="">农/林/牧/渔</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">非盈利机构</a></li>
+                                                            <li><a href="">多元化业务集团公司</a></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="">环保</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-add"><label><input
+                                        type="checkbox" data-role="none"/>只搜最近行业</label></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">工作年限</div>
+                                <div class="search-form">
+                                    <div class="mutil-input width-178">
+                                        <input type="text" id="workYearFromInput" name=""
+                                               class="wy-form-control width-178" data-role="none" placeholder="不限"
+                                               readonly="readonly"
+                                        />
+                                        <a href="" id="workYearFrom" name="workYearFromSelect" class="to-select"
+                                           data-role="selector">
+                                            <i class="icon-down"></i></a>
+                                        <div class="options-div" id="workYearFromDiv">
+                                            <ul>
+                                                <li><a href="">不限</a></li>
+                                                <li><a href="">无工作经验</a></li>
+                                                <li><a href="">一年</a></li>
+                                                <li><a href="">二年</a></li>
+                                                <li><a href="">三年</a></li>
+                                                <li><a href="">五年</a></li>
+                                                <li><a href="">八年</a></li>
+                                                <li><a href="">十年</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="fl">&nbsp;-&nbsp;</span>
+                                    <div class="mutil-input width-178">
+                                        <input type="text" id="workYearToInput" class="wy-form-control width-178"
+                                               data-role="none" placeholder="不限" readonly="readonly"
+                                        />
+                                        <a href="" id="workYearTo" class="to-select" data-role="selector">
+                                            <i class="icon-down"></i></a>
+                                        <div id="workYearToDiv" class="options-div">
+                                            <ul>
+                                                <li><a href="">不限</a></li>
+                                                <li><a href="">无工作经验</a></li>
+                                                <li><a href="">一年</a></li>
+                                                <li><a href="">二年</a></li>
+                                                <li><a href="">四年</a></li>
+                                                <li><a href="">七年</a></li>
+                                                <li><a href="">九年</a></li>
+                                                <li><a href="">十年</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-add"><label><input
+                                        type="checkbox" data-role="none"/>海外经验</label></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历</div>
+                                <div class="search-form">
+                                    <div class="mutil-input width-178"><input type="text" id="wyDegreeFromInput"
+                                                                              class="wy-form-control width-178"
+                                                                              data-role="none"
+                                                                              placeholder="不限" readonly="readonly"/><a
+                                            href="" data-role="selector" id="wyDegreeFrom"
+                                            class="to-select"><i
+                                            class="icon-down"></i></a>
+                                        <div id="wyDegreeFromDiv" class="options-div">
+                                            <ul>
+                                                <li><a href="">不限</a></li>
+                                                <li><a href="">初中及以下</a></li>
+                                                <li><a href="">高中/中技/中专</a></li>
+                                                <li><a href="">大专</a></li>
+                                                <li><a href="">本科</a></li>
+                                                <li><a href="">硕士</a></li>
+                                                <li><a href="">MBA</a></li>
+                                                <li><a href="">博士</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="fl">&nbsp;-&nbsp;</span>
+                                    <div class="mutil-input width-178"><input type="text" id="wyDegreeToInput"
+                                                                              class="wy-form-control width-178"
+                                                                              data-role="none"
+                                                                              placeholder="不限" readonly="readonly"/><a
+                                            href="" id="wyDegreeTo" data-role="selector"
+                                            class="to-select"><i
+                                            class="icon-down"></i></a>
+                                        <div id="wyDegreeToDiv" class="options-div">
+                                            <ul>
+                                                <li><a href="">不限</a></li>
+                                                <li><a href="">初中及以下</a></li>
+                                                <li><a href="">高中/中技/中专</a></li>
+                                                <li><a href="">大专</a></li>
+                                                <li><a href="">本科</a></li>
+                                                <li><a href="">硕士</a></li>
+                                                <li><a href="">MBA</a></li>
+                                                <li><a href="">博士</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-add"><label><input
+                                        type="checkbox" data-role="none"/>985</label><label><input
+                                        type="checkbox" data-role="none"/>211</label><label><input
+                                        type="checkbox" data-role="none"/>全日制</label><label><input
+                                        type="checkbox" data-role="none"/>海外留学</label></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</div>
+                                <div class="search-form">
+                                    <div class="mutil-input width-178"><input type="text"
+                                                                              class="wy-form-control width-178"
+                                                                              data-role="none" placeholder="请输入"
+                                    />
+                                    </div>
+                                    <span class="fl">&nbsp;-&nbsp;</span>
+                                    <div class="mutil-input width-178"><input type="text"
+                                                                              class="wy-form-control width-178"
+                                                                              data-role="none" placeholder="请输入"
+                                    />
+                                    </div>
+                                </div>
+                                <div class="search-add"></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">最近公司</div>
+                                <div class="search-form"><input type="text" class="wy-form-control" placeholder="请输入"
+                                                                data-role="none"/>
+                                </div>
+                                <div class="search-add"></div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-name">期望工作地</div>
+                                <div class="search-form"><input type="text" id="expectedLoactionInput"
+                                                                class="wy-form-control" placeholder="请输入/选择"
+                                                                data-role="none"/>
+                                    <div class="search-con-selected hide"></div>
+                                    <a href="" id="expectedLoaction" class="to-select" data-role="selector"><i
+                                            class="icon-more"></i></a>
+                                    <div id="expectedLoactionDiv" class="hide select-div">
+                                        <div><span>选择期望工作地（最多选1项）</span></div>
+                                        <div id="expectedLoactionSelected" class="wy-selected"><span>已选工作地</span></div>
+                                        <h3>热门城市</h3>
+                                        <div class="wy-condition-list">
+                                            <ul class="wy-condition-list-ul">
+                                                <li><a href="">北京</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">北京</a></dt>
+                                                            <dd><a href="">东城区</a></dd>
+                                                            <dd><a href="">西城区</a></dd>
+                                                            <dd><a href="">崇文区</a></dd>
+                                                            <dd><a href="">宣武区</a></dd>
+                                                            <dd><a href="">朝阳区</a></dd>
+                                                            <dd><a href="">丰台区</a></dd>
+                                                            <dd><a href="">石景区</a></dd>
+                                                            <dd><a href="">海淀区</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">上海</a></li>
+                                                <li><a href="">广州</a></li>
+                                                <li><a href="">深圳</a></li>
+                                                <li><a href="">天津</a></li>
+                                                <li><a href="">重庆</a></li>
+                                                <li><a href="">南京</a></li>
+                                                <li><a href="">武汉</a></li>
+                                                <li><a href="">西安</a></li>
+                                                <li><a href="">杭州</a></li>
+                                                <li><a href="">成都</a></li>
+                                                <li><a href="">苏州</a></li>
+                                                <li><a href="">宁波</a></li>
+                                                <li><a href="">青岛</a></li>
+                                                <li><a href="">沈阳</a></li>
+                                                <li><a href="">大连</a></li>
+                                                <li><a href="">东莞</a></li>
+                                                <li><a href="">福州</a></li>
+                                                <li><a href="">济南</a></li>
+                                                <li><a href="">合肥</a></li>
+                                                <li><a href="">郑州</a></li>
+                                                <li><a href="">长沙</a></li>
+                                                <li><a href="">哈尔滨</a></li>
+                                                <li><a href="">长春</a></li>
+                                                <li><a href="">昆明</a></li>
+                                                <li><a href="">无锡</a></li>
+                                                <li><a href="">常州</a></li>
+                                                <li><a href="">珠海</a></li>
+                                                <li><a href="">佛山</a></li>
+                                                <li><a href="">南昌</a></li>
+                                            </ul>
+                                        </div>
+                                        <h3>所有省份</h3>
+                                        <div class="wy-condition-list">
+                                            <ul class="wy-condition-list-ul">
+                                                <li><a href="">广东省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">广东省</a></dt>
+                                                            <dd><a href="">广州</a></dd>
+                                                            <dd><a href="">深圳</a></dd>
+                                                            <dd><a href="">惠州</a></dd>
+                                                            <dd><a href="">汕头</a></dd>
+                                                            <dd><a href="">珠海</a></dd>
+                                                            <dd><a href="">佛山</a></dd>
+                                                            <dd><a href="">中山</a></dd>
+                                                            <dd><a href="">东莞</a></dd>
+                                                            <dd><a href="">韶关</a></dd>
+                                                            <dd><a href="">江门</a></dd>
+                                                            <dd><a href="">湛江</a></dd>
+                                                            <dd><a href="">肇庆</a></dd>
+                                                            <dd><a href="">清远</a></dd>
+                                                            <dd><a href="">潮州</a></dd>
+                                                            <dd><a href="">河源</a></dd>
+                                                            <dd><a href="">揭阳</a></dd>
+                                                            <dd><a href="">茂名</a></dd>
+                                                            <dd><a href="">汕尾</a></dd>
+                                                            <dd><a href="">梅州</a></dd>
+                                                            <dd><a href="">开平</a></dd>
+                                                            <dd><a href="">阳江</a></dd>
+                                                            <dd><a href="">云浮</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">江苏省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">江苏省</a></dt>
+                                                            <dd><a href="">南京</a></dd>
+                                                            <dd><a href="">苏州</a></dd>
+                                                            <dd><a href="">无锡</a></dd>
+                                                            <dd><a href="">常州</a></dd>
+                                                            <dd><a href="">昆山</a></dd>
+                                                            <dd><a href="">常熟</a></dd>
+                                                            <dd><a href="">扬州</a></dd>
+                                                            <dd><a href="">南通</a></dd>
+                                                            <dd><a href="">镇江</a></dd>
+                                                            <dd><a href="">徐州</a></dd>
+                                                            <dd><a href="">连云港</a></dd>
+                                                            <dd><a href="">盐城</a></dd>
+                                                            <dd><a href="">张家港</a></dd>
+                                                            <dd><a href="">太仓</a></dd>
+                                                            <dd><a href="">泰州</a></dd>
+                                                            <dd><a href="">淮安</a></dd>
+                                                            <dd><a href="">宿迁</a></dd>
+                                                            <dd><a href="">丹阳</a></dd>
+                                                            <dd><a href="">泰兴</a></dd>
+                                                            <dd><a href="">靖江</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">浙江省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">浙江省</a></dt>
+                                                            <dd><a href="">杭州</a></dd>
+                                                            <dd><a href="">宁波</a></dd>
+                                                            <dd><a href="">温州</a></dd>
+                                                            <dd><a href="">绍兴</a></dd>
+                                                            <dd><a href="">金华</a></dd>
+                                                            <dd><a href="">嘉兴</a></dd>
+                                                            <dd><a href="">台州</a></dd>
+                                                            <dd><a href="">湖州</a></dd>
+                                                            <dd><a href="">丽水</a></dd>
+                                                            <dd><a href="">舟山</a></dd>
+                                                            <dd><a href="">衢州</a></dd>
+                                                            <dd><a href="">义乌</a></dd>
+                                                            <dd><a href="">海宁</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">四川省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">四川省</a></dt>
+                                                            <dd><a href="">成都</a></dd>
+                                                            <dd><a href="">绵阳</a></dd>
+                                                            <dd><a href="">乐山</a></dd>
+                                                            <dd><a href="">泸州</a></dd>
+                                                            <dd><a href="">德阳</a></dd>
+                                                            <dd><a href="">宜宾</a></dd>
+                                                            <dd><a href="">自贡</a></dd>
+                                                            <dd><a href="">内江</a></dd>
+                                                            <dd><a href="">内江</a></dd>
+                                                            <dd><a href="">攀枝花</a></dd>
+                                                            <dd><a href="">南充</a></dd>
+                                                            <dd><a href="">眉山</a></dd>
+                                                            <dd><a href="">广安</a></dd>
+                                                            <dd><a href="">资阳</a></dd>
+                                                            <dd><a href="">遂宁</a></dd>
+                                                            <dd><a href="">广元</a></dd>
+                                                            <dd><a href="">达州</a></dd>
+                                                            <dd><a href="">雅安</a></dd>
+                                                            <dd><a href="">西昌</a></dd>
+                                                            <dd><a href="">巴中</a></dd>
+                                                            <dd><a href="">甘孜</a></dd>
+                                                            <dd><a href="">阿坝</a></dd>
+                                                            <dd><a href="">凉山</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">海南省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">海南省</a></dt>
+                                                            <dd><a href="">海口</a></dd>
+                                                            <dd><a href="">三亚</a></dd>
+                                                            <dd><a href="">洋浦经济开发区</a></dd>
+                                                            <dd><a href="">文昌</a></dd>
+                                                            <dd><a href="">琼海</a></dd>
+                                                            <dd><a href="">万宁</a></dd>
+                                                            <dd><a href="">儋州</a></dd>
+                                                            <dd><a href="">东方</a></dd>
+                                                            <dd><a href="">五指山</a></dd>
+                                                            <dd><a href="">定安</a></dd>
+                                                            <dd><a href="">屯昌</a></dd>
+                                                            <dd><a href="">澄迈</a></dd>
+                                                            <dd><a href="">临高</a></dd>
+                                                            <dd><a href="">三沙</a></dd>
+                                                            <dd><a href="">琼中</a></dd>
+                                                            <dd><a href="">保亭</a></dd>
+                                                            <dd><a href="">白沙</a></dd>
+                                                            <dd><a href="">昌江</a></dd>
+                                                            <dd><a href="">乐东</a></dd>
+                                                            <dd><a href="">陵水</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">福建省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">福建省</a></dt>
+                                                            <dd><a href="">福州</a></dd>
+                                                            <dd><a href="">厦门</a></dd>
+                                                            <dd><a href="">泉州</a></dd>
+                                                            <dd><a href="">漳州</a></dd>
+                                                            <dd><a href="">莆田</a></dd>
+                                                            <dd><a href="">三明</a></dd>
+                                                            <dd><a href="">南平</a></dd>
+                                                            <dd><a href="">宁德</a></dd>
+                                                            <dd><a href="">龙岩</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">山东省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">山东省</a></dt>
+                                                            <dd><a href="">济南</a></dd>
+                                                            <dd><a href="">青岛</a></dd>
+                                                            <dd><a href="">烟台</a></dd>
+                                                            <dd><a href="">潍坊</a></dd>
+                                                            <dd><a href="">威海</a></dd>
+                                                            <dd><a href="">淄博</a></dd>
+                                                            <dd><a href="">临沂</a></dd>
+                                                            <dd><a href="">淄博</a></dd>
+                                                            <dd><a href="">济宁</a></dd>
+                                                            <dd><a href="">东营</a></dd>
+                                                            <dd><a href="">泰安</a></dd>
+                                                            <dd><a href="">日照</a></dd>
+                                                            <dd><a href="">德州</a></dd>
+                                                            <dd><a href="">菏泽</a></dd>
+                                                            <dd><a href="">滨州</a></dd>
+                                                            <dd><a href="">枣庄</a></dd>
+                                                            <dd><a href="">聊城</a></dd>
+                                                            <dd><a href="">莱芜</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">江西省</a>
+                                                    <div class="condition-sub-list">
+                                                        <dl>
+                                                            <dt><a href="">江西省</a></dt>
+                                                            <dd><a href="">南昌</a></dd>
+                                                            <dd><a href="">九江</a></dd>
+                                                            <dd><a href="">景德镇</a></dd>
+                                                            <dd><a href="">萍乡</a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">广西省</a></li>
+                                                <li><a href="">安徽省</a></li>
+                                                <li><a href="">河北省</a></li>
+                                                <li><a href="">河南省</a></li>
+                                                <li><a href="">湖北省</a></li>
+                                                <li><a href="">湖南省</a></li>
+                                                <li><a href="">陕西省</a></li>
+                                                <li><a href="">山西省</a></li>
+                                                <li><a href="">黑龙江省</a></li>
+                                                <li><a href="">辽宁省</a></li>
+                                                <li><a href="">吉林省</a></li>
+                                                <li><a href="">云南省</a></li>
+                                                <li><a href="">贵州省</a></li>
+                                                <li><a href="">甘肃省</a></li>
+                                                <li><a href="">内蒙古</a></li>
+                                                <li><a href="">宁夏</a></li>
+                                                <li><a href="">西藏</a></li>
+                                                <li><a href="">新疆</a></li>
+                                                <li><a href="">青海省</a></li>
+                                                <li><a href="">香港</a></li>
+                                                <li><a href="">澳门</a></li>
+                                                <li><a href="">台湾</a></li>
+                                                <li><a href="">国外</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-add"></div>
+                            </div>
+                        </div>
+                        <div class="clearfloat"></div>
+                        <div class="search-fold-btn">
+                            <button id="wyBtnMore" class="wy-btn-more">更多搜索条件<i class="arrow-down"></i></button>
+                        </div>
+                        <div class="search-more">
+                            <div class="search-row">
+                                <div class="search-name">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</div>
+                                <div class="search-form">
+                                    <label><input type="radio" data-role="none" name="sexSearch"/>不限</label>
+                                    <label><input type="radio" data-role="none" name="sexSearch"/>男</label>
+                                    <label><input type="radio" data-role="none" name="sexSearch"/>女</label>
+                                </div>
+                            </div>
+                            <div class="clearfloat"></div>
+                            <div class="search-subjoin fl">
+                                <div class="search-row">
+                                    <div class="search-name">期望月薪</div>
+                                    <div class="search-form">
+                                        <div class="mutil-input width-178"><input type="text" id="wySalaryFromInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="wySalaryFrom" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="wySalaryFromDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">1.5k</a></li>
+                                                    <li><a href="">2k</a></li>
+                                                    <li><a href="">3k</a></li>
+                                                    <li><a href="">4.5k</a></li>
+                                                    <li><a href="">6k</a></li>
+                                                    <li><a href="">8k</a></li>
+                                                    <li><a href="">10k</a></li>
+                                                    <li><a href="">15k</a></li>
+                                                    <li><a href="">20k</a></li>
+                                                    <li><a href="">25k</a></li>
+                                                    <li><a href="">30k</a></li>
+                                                    <li><a href="">40k</a></li>
+                                                    <li><a href="">50k</a></li>
+                                                    <li><a href="">70k</a></li>
+                                                    <li><a href="">100k</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <span class="fl">&nbsp;-&nbsp;</span>
+                                        <div class="mutil-input width-178"><input type="text" id="wySalaryToInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="wySalaryTo" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="wySalaryToDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">1.5k</a></li>
+                                                    <li><a href="">2k</a></li>
+                                                    <li><a href="">3k</a></li>
+                                                    <li><a href="">4.5k</a></li>
+                                                    <li><a href="">6k</a></li>
+                                                    <li><a href="">8k</a></li>
+                                                    <li><a href="">10k</a></li>
+                                                    <li><a href="">15k</a></li>
+                                                    <li><a href="">20k</a></li>
+                                                    <li><a href="">25k</a></li>
+                                                    <li><a href="">30k</a></li>
+                                                    <li><a href="">40k</a></li>
+                                                    <li><a href="">50k</a></li>
+                                                    <li><a href="">70k</a></li>
+                                                    <li><a href="">100k</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-row">
+                                    <div class="search-name">专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业</div>
+                                    <div class="search-form">
+                                        <input type="text" id="wyMajorInput" class="wy-form-control"/>
+                                        <div class="search-con-selected hide"></div>
+                                        <a href="" id="wyMajor" data-role="selector" class="to-select"><i
+                                                class="icon-more"><!--1--></i></a>
+                                        <div id="wyMajorDiv" class="hide select-div">
+                                            <div><span>选择专业（最多选3项）</span></div>
+                                            <div id="wyMajorSelected" class="wy-selected"><span>已选专业</span></div>
+                                            <div class="wy-condition-list">
+                                                <table width="100%" border="1" cellpadding="0" cellspacing="2">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>哲学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">哲学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>经济学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">经济学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>管理学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">管理科学与工程类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">工商管理类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">行政管理、公共管理类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">图书档案学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>文学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">语言文学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">新闻传播学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">艺术类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>工学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">电气信息类</a></li>
+                                                                <li><a href="">材料类</a></li>
+                                                                <li><a href="">岸工程</a></li>
+                                                                <li><a href="">航空航天类</a></li>
+                                                                <li><a href="">生物医学工程类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">计算机科学与技术类</a></li>
+                                                                <li><a href="">仪器仪表类</a></li>
+                                                                <li><a href="">制药工程类</a></li>
+                                                                <li><a href="">轻工纺织食品类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">机械类</a></li>
+                                                                <li><a href="">能源动力类</a></li>
+                                                                <li><a href="">交通运输类</a></li>
+                                                                <li><a href="">武器类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">土建类</a></li>
+                                                                <li><a href="">水利类</a></li>
+                                                                <li><a href="">船舶与海洋工程类</a></li>
+                                                                <li><a href="">公安技术类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>法学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">法学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>历史学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">历史学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>理学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">数学类</a></li>
+                                                                <li><a href="">天文地质地理类</a></li>
+                                                                <li><a href="">环境科学与安全类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">物理学类</a></li>
+                                                                <li><a href="">力学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">化学类及化学工程类</a></li>
+                                                                <li><a href="">电子信息科学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">生物科学及生物技术类</a></li>
+                                                                <li><a href="">系统科学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>教育学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">教育学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>医学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">医学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">心理学类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>农学</th>
+                                                        <td>
+                                                            <ul>
+                                                                <li><a href="">农业类</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-row">
+                                    <div class="search-name">语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;言</div>
+                                    <div class="search-form">
+                                        <div class="mutil-input width-178"><input type="text" id="wyLanguageInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="wyLanguage" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="wyLanguageDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">普通话</a></li>
+                                                    <li><a href="">粤语</a></li>
+                                                    <li><a href="">上海话</a></li>
+                                                    <li><a href="">闽南语</a></li>
+                                                    <li><a href="">阿拉伯语</a></li>
+                                                    <li><a href="">英语</a></li>
+                                                    <li><a href="">法语</a></li>
+                                                    <li><a href="">德语</a></li>
+                                                    <li><a href="">意大利语</a></li>
+                                                    <li><a href="">日语</a></li>
+                                                    <li><a href="">韩语/朝鲜语</a></li>
+                                                    <li><a href="">葡萄牙语</a></li>
+                                                    <li><a href="">俄语</a></li>
+                                                    <li><a href="">西班牙语</a></li>
+                                                    <li><a href="">其他</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <span class="fl">&nbsp;-&nbsp;</span>
+                                        <div class="mutil-input width-178"><input type="text"
+                                                                                  id="languageProficiencyInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none" placeholder="不限"
+                                                                                  readonly="readonly"
+                                                                                  disabled="disabled"
+                                        />
+                                            <a href="" id="languageProficiency" data-role="selector"
+                                               class="to-select"><i class="icon-down"></i></a>
+                                            <div id="languageProficiencyDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">一般</a></li>
+                                                    <li><a href="">良好</a></li>
+                                                    <li><a href="">熟练</a></li>
+                                                    <li><a href="">精通</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-row ">
+                                    <div class="search-name">简历更新</div>
+                                    <div class="search-form">
+                                        <div class="mutil-input width-178"><input type="text" id="wyPeriodInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="wyPeriod" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="wyPeriodDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">近1周</a></li>
+                                                    <li><a href="">近2周</a></li>
+                                                    <li><a href="">近1个月</a></li>
+                                                    <li><a href="">近2个月</a></li>
+                                                    <li><a href="">近6个月</a></li>
+                                                    <li><a href="">近1年</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-subjoin fr">
+                                <div class="search-row ">
+                                    <div class="search-name">目前月薪</div>
+                                    <div class="search-form">
+                                        <div class="mutil-input width-178"><input type="text" id="curSalaryFromInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none" placeholder="不限"
+                                                                                  readonly="readonly"/><a href=""
+                                                                                                          id="curSalaryFrom"
+                                                                                                          data-role="selector"
+                                                                                                          class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="curSalaryFromDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">1.5k</a></li>
+                                                    <li><a href="">2k</a></li>
+                                                    <li><a href="">3k</a></li>
+                                                    <li><a href="">4.5k</a></li>
+                                                    <li><a href="">6k</a></li>
+                                                    <li><a href="">8k</a></li>
+                                                    <li><a href="">10k</a></li>
+                                                    <li><a href="">15k</a></li>
+                                                    <li><a href="">20k</a></li>
+                                                    <li><a href="">25k</a></li>
+                                                    <li><a href="">30k</a></li>
+                                                    <li><a href="">40k</a></li>
+                                                    <li><a href="">50k</a></li>
+                                                    <li><a href="">70k</a></li>
+                                                    <li><a href="">100k</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <span class="fl">&nbsp;-&nbsp;</span>
+                                        <div class="mutil-input width-178"><input type="text" id="curSalaryToInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="curSalaryTo" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="curSalaryToDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">1.5k</a></li>
+                                                    <li><a href="">2k</a></li>
+                                                    <li><a href="">3k</a></li>
+                                                    <li><a href="">4.5k</a></li>
+                                                    <li><a href="">6k</a></li>
+                                                    <li><a href="">8k</a></li>
+                                                    <li><a href="">10k</a></li>
+                                                    <li><a href="">15k</a></li>
+                                                    <li><a href="">20k</a></li>
+                                                    <li><a href="">25k</a></li>
+                                                    <li><a href="">30k</a></li>
+                                                    <li><a href="">40k</a></li>
+                                                    <li><a href="">50k</a></li>
+                                                    <li><a href="">70k</a></li>
+                                                    <li><a href="">100k</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-row ">
+                                    <div class="search-name">户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;口</div>
+                                    <div class="search-form">
+                                        <input type="text" id="wyAnmeldenInput" class="wy-form-control"
+                                               placeholder="请输入/选择"/>
+                                        <div class="search-con-selected"></div>
+                                        <a href="" id="wyAnmelden" class="to-select" data-role="selector"><i
+                                                class="icon-more"></i></a>
+                                        <div id="wyAnmeldenDiv" class="hide select-div">
+                                            <div><span>选择户口（最多选1项）</span></div>
+                                            <div id="wyAnmeldenSelected" class="wy-selected "><span>已选户口</span></div>
+                                            <h3>热门城市</h3>
+                                            <div class="wy-condition-list">
+                                                <ul class="wy-condition-list-ul">
+                                                    <li><a href="">北京</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">北京</a></dt>
+                                                                <dd><a href="">东城区</a></dd>
+                                                                <dd><a href="">西城区</a></dd>
+                                                                <dd><a href="">崇文区</a></dd>
+                                                                <dd><a href="">宣武区</a></dd>
+                                                                <dd><a href="">朝阳区</a></dd>
+                                                                <dd><a href="">丰台区</a></dd>
+                                                                <dd><a href="">石景区</a></dd>
+                                                                <dd><a href="">海淀区</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">上海</a></li>
+                                                    <li><a href="">广州</a></li>
+                                                    <li><a href="">深圳</a></li>
+                                                    <li><a href="">天津</a></li>
+                                                    <li><a href="">重庆</a></li>
+                                                    <li><a href="">南京</a></li>
+                                                    <li><a href="">武汉</a></li>
+                                                    <li><a href="">西安</a></li>
+                                                    <li><a href="">杭州</a></li>
+                                                    <li><a href="">成都</a></li>
+                                                    <li><a href="">苏州</a></li>
+                                                    <li><a href="">宁波</a></li>
+                                                    <li><a href="">青岛</a></li>
+                                                    <li><a href="">沈阳</a></li>
+                                                    <li><a href="">大连</a></li>
+                                                    <li><a href="">东莞</a></li>
+                                                    <li><a href="">福州</a></li>
+                                                    <li><a href="">济南</a></li>
+                                                    <li><a href="">合肥</a></li>
+                                                    <li><a href="">郑州</a></li>
+                                                    <li><a href="">长沙</a></li>
+                                                    <li><a href="">哈尔滨</a></li>
+                                                    <li><a href="">长春</a></li>
+                                                    <li><a href="">昆明</a></li>
+                                                    <li><a href="">无锡</a></li>
+                                                    <li><a href="">常州</a></li>
+                                                    <li><a href="">珠海</a></li>
+                                                    <li><a href="">佛山</a></li>
+                                                    <li><a href="">南昌</a></li>
+                                                </ul>
+                                            </div>
+                                            <h3>所有省份</h3>
+                                            <div class="wy-condition-list">
+                                                <ul class="wy-condition-list-ul">
+                                                    <li><a href="">广东省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">广东省</a></dt>
+                                                                <dd><a href="">广州</a></dd>
+                                                                <dd><a href="">深圳</a></dd>
+                                                                <dd><a href="">惠州</a></dd>
+                                                                <dd><a href="">汕头</a></dd>
+                                                                <dd><a href="">珠海</a></dd>
+                                                                <dd><a href="">佛山</a></dd>
+                                                                <dd><a href="">中山</a></dd>
+                                                                <dd><a href="">东莞</a></dd>
+                                                                <dd><a href="">韶关</a></dd>
+                                                                <dd><a href="">江门</a></dd>
+                                                                <dd><a href="">湛江</a></dd>
+                                                                <dd><a href="">肇庆</a></dd>
+                                                                <dd><a href="">清远</a></dd>
+                                                                <dd><a href="">潮州</a></dd>
+                                                                <dd><a href="">河源</a></dd>
+                                                                <dd><a href="">揭阳</a></dd>
+                                                                <dd><a href="">茂名</a></dd>
+                                                                <dd><a href="">汕尾</a></dd>
+                                                                <dd><a href="">梅州</a></dd>
+                                                                <dd><a href="">开平</a></dd>
+                                                                <dd><a href="">阳江</a></dd>
+                                                                <dd><a href="">云浮</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">江苏省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">江苏省</a></dt>
+                                                                <dd><a href="">南京</a></dd>
+                                                                <dd><a href="">苏州</a></dd>
+                                                                <dd><a href="">无锡</a></dd>
+                                                                <dd><a href="">常州</a></dd>
+                                                                <dd><a href="">昆山</a></dd>
+                                                                <dd><a href="">常熟</a></dd>
+                                                                <dd><a href="">扬州</a></dd>
+                                                                <dd><a href="">南通</a></dd>
+                                                                <dd><a href="">镇江</a></dd>
+                                                                <dd><a href="">徐州</a></dd>
+                                                                <dd><a href="">连云港</a></dd>
+                                                                <dd><a href="">盐城</a></dd>
+                                                                <dd><a href="">张家港</a></dd>
+                                                                <dd><a href="">太仓</a></dd>
+                                                                <dd><a href="">泰州</a></dd>
+                                                                <dd><a href="">淮安</a></dd>
+                                                                <dd><a href="">宿迁</a></dd>
+                                                                <dd><a href="">丹阳</a></dd>
+                                                                <dd><a href="">泰兴</a></dd>
+                                                                <dd><a href="">靖江</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">浙江省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">浙江省</a></dt>
+                                                                <dd><a href="">杭州</a></dd>
+                                                                <dd><a href="">宁波</a></dd>
+                                                                <dd><a href="">温州</a></dd>
+                                                                <dd><a href="">绍兴</a></dd>
+                                                                <dd><a href="">金华</a></dd>
+                                                                <dd><a href="">嘉兴</a></dd>
+                                                                <dd><a href="">台州</a></dd>
+                                                                <dd><a href="">湖州</a></dd>
+                                                                <dd><a href="">丽水</a></dd>
+                                                                <dd><a href="">舟山</a></dd>
+                                                                <dd><a href="">衢州</a></dd>
+                                                                <dd><a href="">义乌</a></dd>
+                                                                <dd><a href="">海宁</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">四川省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">四川省</a></dt>
+                                                                <dd><a href="">成都</a></dd>
+                                                                <dd><a href="">绵阳</a></dd>
+                                                                <dd><a href="">乐山</a></dd>
+                                                                <dd><a href="">泸州</a></dd>
+                                                                <dd><a href="">德阳</a></dd>
+                                                                <dd><a href="">宜宾</a></dd>
+                                                                <dd><a href="">自贡</a></dd>
+                                                                <dd><a href="">内江</a></dd>
+                                                                <dd><a href="">内江</a></dd>
+                                                                <dd><a href="">攀枝花</a></dd>
+                                                                <dd><a href="">南充</a></dd>
+                                                                <dd><a href="">眉山</a></dd>
+                                                                <dd><a href="">广安</a></dd>
+                                                                <dd><a href="">资阳</a></dd>
+                                                                <dd><a href="">遂宁</a></dd>
+                                                                <dd><a href="">广元</a></dd>
+                                                                <dd><a href="">达州</a></dd>
+                                                                <dd><a href="">雅安</a></dd>
+                                                                <dd><a href="">西昌</a></dd>
+                                                                <dd><a href="">巴中</a></dd>
+                                                                <dd><a href="">甘孜</a></dd>
+                                                                <dd><a href="">阿坝</a></dd>
+                                                                <dd><a href="">凉山</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">海南省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">海南省</a></dt>
+                                                                <dd><a href="">海口</a></dd>
+                                                                <dd><a href="">三亚</a></dd>
+                                                                <dd><a href="">洋浦经济开发区</a></dd>
+                                                                <dd><a href="">文昌</a></dd>
+                                                                <dd><a href="">琼海</a></dd>
+                                                                <dd><a href="">万宁</a></dd>
+                                                                <dd><a href="">儋州</a></dd>
+                                                                <dd><a href="">东方</a></dd>
+                                                                <dd><a href="">五指山</a></dd>
+                                                                <dd><a href="">定安</a></dd>
+                                                                <dd><a href="">屯昌</a></dd>
+                                                                <dd><a href="">澄迈</a></dd>
+                                                                <dd><a href="">临高</a></dd>
+                                                                <dd><a href="">三沙</a></dd>
+                                                                <dd><a href="">琼中</a></dd>
+                                                                <dd><a href="">保亭</a></dd>
+                                                                <dd><a href="">白沙</a></dd>
+                                                                <dd><a href="">昌江</a></dd>
+                                                                <dd><a href="">乐东</a></dd>
+                                                                <dd><a href="">陵水</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">福建省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">福建省</a></dt>
+                                                                <dd><a href="">福州</a></dd>
+                                                                <dd><a href="">厦门</a></dd>
+                                                                <dd><a href="">泉州</a></dd>
+                                                                <dd><a href="">漳州</a></dd>
+                                                                <dd><a href="">莆田</a></dd>
+                                                                <dd><a href="">三明</a></dd>
+                                                                <dd><a href="">南平</a></dd>
+                                                                <dd><a href="">宁德</a></dd>
+                                                                <dd><a href="">龙岩</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">山东省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">山东省</a></dt>
+                                                                <dd><a href="">济南</a></dd>
+                                                                <dd><a href="">青岛</a></dd>
+                                                                <dd><a href="">烟台</a></dd>
+                                                                <dd><a href="">潍坊</a></dd>
+                                                                <dd><a href="">威海</a></dd>
+                                                                <dd><a href="">淄博</a></dd>
+                                                                <dd><a href="">临沂</a></dd>
+                                                                <dd><a href="">淄博</a></dd>
+                                                                <dd><a href="">济宁</a></dd>
+                                                                <dd><a href="">东营</a></dd>
+                                                                <dd><a href="">泰安</a></dd>
+                                                                <dd><a href="">日照</a></dd>
+                                                                <dd><a href="">德州</a></dd>
+                                                                <dd><a href="">菏泽</a></dd>
+                                                                <dd><a href="">滨州</a></dd>
+                                                                <dd><a href="">枣庄</a></dd>
+                                                                <dd><a href="">聊城</a></dd>
+                                                                <dd><a href="">莱芜</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">江西省</a>
+                                                        <div class="condition-sub-list">
+                                                            <dl>
+                                                                <dt><a href="">江西省</a></dt>
+                                                                <dd><a href="">南昌</a></dd>
+                                                                <dd><a href="">九江</a></dd>
+                                                                <dd><a href="">景德镇</a></dd>
+                                                                <dd><a href="">萍乡</a></dd>
+                                                            </dl>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="">广西省</a></li>
+                                                    <li><a href="">安徽省</a></li>
+                                                    <li><a href="">河北省</a></li>
+                                                    <li><a href="">河南省</a></li>
+                                                    <li><a href="">湖北省</a></li>
+                                                    <li><a href="">湖南省</a></li>
+                                                    <li><a href="">陕西省</a></li>
+                                                    <li><a href="">山西省</a></li>
+                                                    <li><a href="">黑龙江省</a></li>
+                                                    <li><a href="">辽宁省</a></li>
+                                                    <li><a href="">吉林省</a></li>
+                                                    <li><a href="">云南省</a></li>
+                                                    <li><a href="">贵州省</a></li>
+                                                    <li><a href="">甘肃省</a></li>
+                                                    <li><a href="">内蒙古</a></li>
+                                                    <li><a href="">宁夏</a></li>
+                                                    <li><a href="">西藏</a></li>
+                                                    <li><a href="">新疆</a></li>
+                                                    <li><a href="">青海省</a></li>
+                                                    <li><a href="">香港</a></li>
+                                                    <li><a href="">澳门</a></li>
+                                                    <li><a href="">台湾</a></li>
+                                                    <li><a href="">国外</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-row ">
+                                    <div class="search-name">英语等级</div>
+                                    <div class="search-form">
+                                        <div class="mutil-input width-178"><input type="text" id="EnglishLevelInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="EnglishLevel" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="EnglishLevelDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">英语四级以上</a></li>
+                                                    <li><a href="">英语六级以上</a></li>
+                                                    <li><a href="">专业四级以上</a></li>
+                                                    <li><a href="">专业八级</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-row ">
+                                    <div class="search-name">求职状态</div>
+                                    <div class="search-form">
+                                        <div class="mutil-input width-178"><input type="text" id="jobStatusInput"
+                                                                                  class="wy-form-control width-178"
+                                                                                  data-role="none"
+                                                                                  placeholder="不限" readonly="readonly"/><a
+                                                href="" id="jobStatus" data-role="selector"
+                                                class="to-select"><i
+                                                class="icon-down"></i></a>
+                                            <div id="jobStatusDiv" class="options-div">
+                                                <ul>
+                                                    <li><a href="">不限</a></li>
+                                                    <li><a href="">目前正在找工作</a></li>
+                                                    <li><a href="">其他</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fr search-lately">
+                            <div class="search-row ">
+                                <div class="search-form">
+                                    <div class="mutil-input width-178">
+                                        <input type="text" id="searchEngineInput" class="wy-form-control width-178"
+                                               data-role="none" placeholder="选择搜索器"/>
+                                        <a
+                                                href="" id="searchEngine" class="to-select" data-role="selector"><i
+                                                class="icon-down"></i></a>
+                                        <div id="searchEngineDiv" class="options-div">
+                                            <ul>
+                                                <li><a href="">java+北京+互联网</a></li>
+                                                <li><a href="">数据分析+上海+互联网</a></li>
+                                                <li><a href="">后端开发+广州</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="show-search-lately">
+                                <dl>
+                                    <dt>最近使用的搜索条件</dt>
+                                    <dd><a href="">sas数据分析+深圳(期望)+近1年</a></dd>
+                                    <dd><a href="">java+互联网/电子商务+三年以上+本科及以上</a></dd>
+                                    <dd><a href="">创新博文+成都(期望)+近1年</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="clearfloat"></div>
+                        <div class="search-btns">
+                            <button id="wySearchBtn" class="wy-btn"><i class="wy-search-icon"></i>搜索简历</button>
+                            <a href="" class="margin_left_10px">保存搜索条件</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+</div>
+<div id="wyPopupWrap" class="wy-popup-wrap hide">
+    <div class="wy-popup-mask"></div>
+    <div id="wyPopup" class="container-wrap">
+        <div class="close-btn-wrap">
+            <a href="" id="addCondition" class="close-btn">确定</a>
+            <a href="" id="closeBtn" class="close-btn">取消</a>
+        </div>
+        <div class="popup-info">
+            <div></div>
+        </div>
+        <div id="popupContainer" class="">
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
