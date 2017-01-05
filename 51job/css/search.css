@@ -642,7 +642,7 @@ a.wy-distinct {
 }
 
 .select-div .wy-condition-list .wy-condition-list-table-fr ul {
-    line-height: 20px;
+    line-height: 19px;
     border-bottom: none;
 }
 
@@ -651,6 +651,31 @@ a.wy-distinct {
     display: inline-block;
     width: 180px;
     padding-left: 10px;
+}
+
+.select-div .condition-sub-list {
+    position: absolute;
+    min-width: 240px;
+    height: auto;
+    padding: 10px;
+    background-color: #f4f4f4;
+    display: none;
+    z-index: 9;
+}
+
+.select-div .condition-sub-list a {
+    color: #5191ce;
+}
+
+.select-div .condition-sub-list dl dt {
+    font-weight: bold;
+}
+
+.select-div .condition-sub-list dl dd {
+    display: inline-block;
+    max-width: 96px;
+    min-width: 60px;
+    margin-right: 20px;
 }
 
 .select-div table {
@@ -700,24 +725,13 @@ a.wy-distinct {
     color: #ff6810;
 }
 
-.select-div .condition-sub-list {
-    position: absolute;
-    width: 240px;
-    height: auto;
-    padding: 10px;
-    background-color: #f4f4f4;
-    display: none;
-    z-index: 9;
+.select-div .wy-condition-list-table-fr .condition-sub-list {
+    width: 340px;
 }
 
-.select-div .condition-sub-list a {
-    color: #5191ce;
-}
-
-.select-div .condition-sub-list dl dd {
-    float: left;
-    min-width: 45px;
-    margin-right: 10px;
+.select-div .wy-condition-list-table-fr .condition-sub-list dl dd {
+    max-width: 200px;
+    min-width: 150px;
 }
 
 .search-row .search-add {
@@ -800,13 +814,27 @@ a.wy-distinct {
 }
 
 .search-con-selected a {
+    position: relative;
     float: left;
     padding: 4px;
+    padding-right: 15px;
     background-color: #f2f2f2;
     font-size: 13px;
     margin-right: 5px;
     line-height: 14px;
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85px;
+    white-space: nowrap;
+}
+
+.search-con-selected a .close-icon {
+    margin-left: 2px;
+    margin-right: 2px;
+    position: absolute;
+    right: 5px;
+    top: 7px;
 }
 
 /*搜索结果页*/

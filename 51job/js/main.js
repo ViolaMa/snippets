@@ -18,15 +18,16 @@ $(function () {
 
     // 搜索条件打开折叠
     $(".search-more").hide();
-    $("#wyBtnMore").click(function () {
-      if ($(this).text() == "更多搜索条件") {
-        $(".search-more").show();
-        $(this).html("精简搜索条件" + "<i class='arrow-up'></i>");
-      } else {
+    $("#wyBtnMore").click(function (e) {
+      e.preventDefault();
+      if ($(this).text() == "精简搜索条件") {
         $(".search-more").hide();
         $(this).html("更多搜索条件" + "<i class='arrow-down'></i>");
+      } else {
+        $(".search-more").show();
+        $(this).html("精简搜索条件" + "<i class='arrow-up'></i>");
       }
-      return false;
+      // return false;
     });
 
     // 下拉框
@@ -54,11 +55,24 @@ $(function () {
       }
       $("#" + ids + "Input").focus();
       $("#" + ids + "Div").show().find("ul li a").each(function () {
+        if (winHeight - $("#" + ids + "Div").offset().top < $("#" + ids + "Div").height()) {
+          var divHeight = $("#" + ids + "Div").height();
+          //console.log(divHeight);
+          $("#" + ids + "Div").css("top", -(divHeight - 6) + "px"); //6是因为input的外层div高度为45px，input高度为32，input距顶部距离为(45-32)/2≈6；
+        }
         $(this).click(function () {
           var txt = $(this).text();
-          $("#" + ids + "Input").focus().val(txt);
-          if ($("#wyLanguageInput").val() != "") {
-            $("#languageProficiencyInput").attr("disabled", false);
+          var inputId = ids.substr(0, ids.indexOf("From"));
+          if (txt == "不限") {
+            $("#" + ids + "Input").val("").attr("placeholder", "不限");
+            $("#" + inputId + "ToInput").val("").attr("placeholder", "不限");
+          }
+          else {
+            $("#" + ids + "Input").val(txt);
+            $("#" + inputId + "ToInput").val("及以上");
+            if ($("#wyLanguageInput").val() != "") {
+              $("#languageProficiencyInput").val("精通").attr("disabled", false);
+            }
           }
           $(this).parents(".options-div").hide();
           return false;
@@ -101,7 +115,7 @@ $(function () {
           wyPopUp($("#" + ids + "Div"), {height: "417px"});
         }
         else {
-          wyPopUp($("#" + ids + "Div"), {height: "536px"});
+          wyPopUp($("#" + ids + "Div"), {height: "534px"});
         }
         console.log(ids);
         console.log("list:" + list);
@@ -126,6 +140,10 @@ $(function () {
       delPopCondition();
       return false;
     });
+
+    $(".condition-sub-list").mouseleave(function () {
+      $(this).hide();
+    })
 
     //添加条件到页面位置
     $("#addCondition").click(function () {
